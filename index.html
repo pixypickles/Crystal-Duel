@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#071426">
+  <title>Crystal Duel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <section id="hud">
+      <div class="side">
+        <b>YOU</b>
+        <div class="hp"><span id="pHp"></span></div>
+        <span id="pHpText">30</span>
+      </div>
+      <button id="restart" aria-label="リスタート">↻<span id="difficultyBadge">NORMAL</span></button>
+      <div class="side enemy">
+        <span id="eHpText">30</span>
+        <div class="hp"><span id="eHp"></span></div>
+        <b>AI</b>
+      </div>
+    </section>
+
+    <canvas id="game" width="1280" height="720"></canvas>
+
+    <section id="overlay" class="panel show">
+      <h1>CRYSTAL DUEL</h1>
+      <p>1人プレイ・難易度を選択</p>
+      <div class="difficulty">
+        <button data-difficulty="easy">イージー</button>
+        <button data-difficulty="normal" class="selected">ノーマル</button>
+        <button data-difficulty="hard">ハード</button>
+      </div>
+      <p id="difficultyHelp">標準的な強さ</p>
+      <button id="start" class="primary">スタート</button>
+      <p class="tip">ガード開始から0.16秒以内に弾が当たると反射！</p>
+    </section>
+
+    <section id="result" class="panel">
+      <h2 id="resultTitle">YOU WIN!</h2>
+      <button id="again" class="primary">もう一度</button>
+    </section>
+
+    <section id="controls">
+      <div class="move">
+        <button data-action="up">▲</button>
+        <button data-action="down">▼</button>
+      </div>
+      <button data-action="a"><b>A</b><small>低速 5/8</small></button>
+      <button data-action="b"><b>B</b><small>中速 4/7</small></button>
+      <button data-action="c"><b>C</b><small>高速 3/6</small></button>
+      <button data-action="guard" class="guard"><b>G</b><small>ガード</small></button>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
